@@ -1,5 +1,5 @@
 <?php
-error_reporting(~E_DEPRECATED);
+
 require 'vendor/autoload.php';
 require_once 'vendor/tourcms/tourcms-php/src/TourCMS.php';
 require_once 'vendor/tourcms/tourcms-php/src/tourcms-cache-file.php';
