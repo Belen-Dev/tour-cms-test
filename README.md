@@ -14,8 +14,7 @@ Follow these steps to set up and run the project using Docker:
 
 1. **Clone the Repository**
    ```sh
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/Belen-Dev/tour-cms-test.git
    ```
 
 2. **Set Up Environment Variables**
