@@ -1,0 +1,7 @@
+{
+    "license": "MIT",
+    "require": {
+        "tourcms/tourcms-php": "^3.9",
+        "vlucas/phpdotenv": "^5.3"
+    }
+}

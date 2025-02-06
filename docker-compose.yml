@@ -1,0 +1,34 @@
+version: '3'
+
+name: tour-cms-test
+services:
+  nginx:
+    build: 
+      context: .
+      dockerfile: .docker/nginx/Dockerfile
+    image: nginx:alpine
+    volumes:
+      - ./public:/var/www/html
+      - ./.docker/nginx/certs:/etc/nginx/certs
+    ports:
+      - "8080:80"
+    networks:
+      - tour-cms-test
+
+  php:
+    build: 
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    volumes:
+      - ./public/tours.php:/var/www/html/tours.php
+      - ./composer.json:/var/www/html/composer.json
+      - ./config/api.php:/var/www/html/config/api.php
+      - .env:/var/www/html/config/.env
+      - ./src/helpers:/var/www/html/src/helpers
+      - ./vendor/tourcms-cache-file.php:/var/www/html/vendor/tourcms/tourcms-php/src/tourcms-cache-file.php
+    networks:
+      - tour-cms-test
+
+networks:
+  tour-cms-test:
+    driver: bridge
